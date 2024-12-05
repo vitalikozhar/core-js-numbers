@@ -614,10 +614,7 @@ function getRandomInteger(min, max) {
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  console.log(a);
-  console.log(b);
-  const max = Math.max(a, b);
-  return Math.sqrt(a ** 2 + b ** 2) * max;
+  return Math.hypot(a, b);
 }
 
 /**
@@ -633,8 +630,13 @@ function getHypotenuse(a, b) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  if (number === 0) {
+    return 0;
+  }
+  const absNumber = Math.abs(number);
+  const count = Math.floor((absNumber + 1) / 2);
+  return count;
 }
 
 module.exports = {
