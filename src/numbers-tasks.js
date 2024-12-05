@@ -563,13 +563,13 @@ function getIntegerPartNumber(number) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-  // function getSumOfNumbers(...args) {
-  //   let sum = 0;
-  //   args.forEach((el) => {
-  //     sum += el;
-  //   });
-  //   return ((sum * 100) % 1) / 100;
-  // }
+function getSumOfNumbers(...args) {
+  let sum = 0;
+  args.forEach((el) => {
+    sum += el;
+  });
+  return sum.toFixed(3);
+}
 
 /**
  * Returns the largest number.
@@ -583,8 +583,8 @@ function getIntegerPartNumber(number) {
  * -5, -6 => -5
  * 0, 5   => 5
  */
-function getMaxNumber(/* firstNumber, secondNumber */) {
-  throw new Error('Not implemented');
+function getMaxNumber(firstNumber, secondNumber) {
+  return Math.max(firstNumber, secondNumber);
 }
 
 /**
@@ -599,8 +599,8 @@ function getMaxNumber(/* firstNumber, secondNumber */) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(/* min, max */) {
-  throw new Error('Not implemented');
+function getRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 /**
@@ -613,8 +613,11 @@ function getRandomInteger(/* min, max */) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(/* a, b */) {
-  throw new Error('Not implemented');
+function getHypotenuse(a, b) {
+  console.log(a);
+  console.log(b);
+  const max = Math.max(a, b);
+  return Math.sqrt(a ** 2 + b ** 2) * max;
 }
 
 /**
